@@ -1,17 +1,6 @@
 import Image from "next/image";
 import Link from 'next/link';
-import dynamic from 'next/dynamic';
 import SketchfabSeat from '@/components/SketchfabSeat';
-
-// Import the 3D chair model component with dynamic loading to avoid SSR issues
-const ChairModel = dynamic(() => import('@/components/ChairModel'), {
-  ssr: false,
-  loading: () => (
-    <div className="aspect-square bg-gradient-to-br from-blue-50 to-blue-100 rounded-3xl animate-pulse flex items-center justify-center">
-      <p className="text-blue-500">Loading 3D Model...</p>
-    </div>
-  )
-});
 
 export default function Home() {
   return (
@@ -52,7 +41,7 @@ export default function Home() {
             </h1>
             
             <p className="text-xl md:text-2xl mb-12 text-gray-300 max-w-3xl animate-fade-in-up opacity-0" style={{ animationDelay: "0.6s", animationFillMode: "forwards" }}>
-              Türkiye'nin lider taşıt koltuğu üreticisi olarak, en son teknoloji ve yenilikçi tasarımlarla sektöre yön veriyoruz.
+              Türkiye&apos;nin lider taşıt koltuğu üreticisi olarak, en son teknoloji ve yenilikçi tasarımlarla sektöre yön veriyoruz.
             </p>
             
             <div className="flex flex-wrap gap-6 animate-fade-in-up opacity-0" style={{ animationDelay: "0.8s", animationFillMode: "forwards" }}>
@@ -94,7 +83,7 @@ export default function Home() {
         <div className="absolute left-0 bottom-1/4 w-72 h-72 bg-blue-600/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
         
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-white/60 animate-bounce">
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-white/60 animate-bounce z-20">
           <p className="text-sm mb-2">Aşağı Kaydır</p>
           <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
@@ -102,14 +91,14 @@ export default function Home() {
         </div>
         
         {/* Floating Stats */}
-        <div className="absolute bottom-20 left-10 md:bottom-32 md:left-20 animate-fade-in-up opacity-0" style={{ animationDelay: "1s", animationFillMode: "forwards" }}>
+        <div className="absolute hidden sm:block bottom-32 sm:bottom-36 left-10 md:bottom-32 md:left-20 animate-fade-in-up opacity-0 z-10" style={{ animationDelay: "1s", animationFillMode: "forwards" }}>
           <div className="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20 shadow-xl">
             <p className="text-blue-300 font-medium text-sm">Müşteri Memnuniyeti</p>
             <p className="text-4xl font-bold text-white">98%</p>
           </div>
         </div>
         
-        <div className="absolute bottom-20 right-10 md:bottom-32 md:right-20 animate-fade-in-up opacity-0" style={{ animationDelay: "1.2s", animationFillMode: "forwards" }}>
+        <div className="absolute hidden sm:block bottom-32 sm:bottom-36 right-10 md:bottom-32 md:right-20 animate-fade-in-up opacity-0 z-10" style={{ animationDelay: "1.2s", animationFillMode: "forwards" }}>
           <div className="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20 shadow-xl">
             <p className="text-blue-300 font-medium text-sm">Başarılı Proje</p>
             <p className="text-4xl font-bold text-white">500+</p>
@@ -312,7 +301,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <div className="inline-flex items-center bg-blue-50 rounded-full px-6 py-2 mb-6">
-              <span className="text-blue-600 font-semibold">ATK Otomotiv'in Öne Çıkan Ürünleri</span>
+              <span className="text-blue-600 font-semibold">ATK Otomotiv&apos;in Öne Çıkan Ürünleri</span>
             </div>
             <h2 className="text-4xl font-bold mb-4 text-gray-900">
               Öne Çıkan <span className="text-blue-600">Ürünlerimiz</span>
@@ -515,7 +504,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Testimonial 1 */}
             <div className="bg-white p-8 rounded-2xl shadow-lg relative">
-              <div className="absolute -top-5 left-8 text-blue-600 text-6xl">"</div>
+              <div className="absolute -top-5 left-8 text-blue-600 text-6xl">&quot;</div>
               <div className="relative z-10">
                 <div className="flex items-center mb-4">
                   <div className="flex space-x-1">
@@ -527,7 +516,7 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="text-gray-600 mb-6 italic">
-                  "Filomuz için tercih ettiğimiz Executive Pro XL koltuklar, yolcularımızdan büyük beğeni topladı. Uzun yolculuklarda bile konfor sağlayan bu koltuklar, firmamızın kalite standardını yükseltti."
+                  &quot;Filomuz için tercih ettiğimiz Executive Pro XL koltuklar, yolcularımızdan büyük beğeni topladı. Uzun yolculuklarda bile konfor sağlayan bu koltuklar, firmamızın kalite standardını yükseltti.&quot;
                 </p>
                 <div className="flex items-center">
                   <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold text-xl">
@@ -543,7 +532,7 @@ export default function Home() {
             
             {/* Testimonial 2 */}
             <div className="bg-white p-8 rounded-2xl shadow-lg relative">
-              <div className="absolute -top-5 left-8 text-blue-600 text-6xl">"</div>
+              <div className="absolute -top-5 left-8 text-blue-600 text-6xl">&quot;</div>
               <div className="relative z-10">
                 <div className="flex items-center mb-4">
                   <div className="flex space-x-1">
@@ -555,7 +544,7 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="text-gray-600 mb-6 italic">
-                  "Cargo Master koltuklar, şoförlerimizin uzun yol yorgunluğunu önemli ölçüde azalttı. Ayarlanabilir bel desteği ve süspansiyon sistemi sayesinde çok daha verimli çalışıyoruz."
+                  &quot;Cargo Master koltuklar, şoförlerimizin uzun yol yorgunluğunu önemli ölçüde azalttı. Ayarlanabilir bel desteği ve süspansiyon sistemi sayesinde çok daha verimli çalışıyoruz.&quot;
                 </p>
                 <div className="flex items-center">
                   <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold text-xl">
@@ -571,7 +560,7 @@ export default function Home() {
             
             {/* Testimonial 3 */}
             <div className="bg-white p-8 rounded-2xl shadow-lg relative">
-              <div className="absolute -top-5 left-8 text-blue-600 text-6xl">"</div>
+              <div className="absolute -top-5 left-8 text-blue-600 text-6xl">&quot;</div>
               <div className="relative z-10">
                 <div className="flex items-center mb-4">
                   <div className="flex space-x-1">
@@ -583,7 +572,7 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="text-gray-600 mb-6 italic">
-                  "Tactical Pro koltukları zorlu arazi koşullarında test ettik ve performanslarından çok memnun kaldık. Darbelere karşı dayanıklılığı ve güvenlik özellikleri rakipsiz."
+                  &quot;Tactical Pro koltukları zorlu arazi koşullarında test ettik ve performanslarından çok memnun kaldık. Darbelere karşı dayanıklılığı ve güvenlik özellikleri rakipsiz.&quot;
                 </p>
                 <div className="flex items-center">
                   <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold text-xl">
