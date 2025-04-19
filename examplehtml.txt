@@ -1,0 +1,94 @@
+<div class="row" style="text-align: center;">
+
+
+
+<div class="webde-yedi mobilde-uclu">
+<a href="urun-gruplari/otobuskoltuklari">
+<div id="degis-otobus">
+<img src="img/ikons/otobus.png" style="width: 100%;">
+</div>
+<h4>Otobüs Koltukları</h4>
+</a>
+</div>
+
+
+<div class="webde-yedi mobilde-uclu">
+<a href="urun-gruplari/minibuskoltuklari">
+<div id="degis-panelvan">
+<img src="img/ikons/panelvan.png" style="width: 100%;">
+</div>
+<h4>Minibüs Koltukları</h4>
+</a>
+</div>
+
+<div class="webde-yedi mobilde-uclu">
+<a href="urun-gruplari/askerikoltuklarimiz">
+<div id="degis-askeri">
+<img src="img/ikons/askeri.png" style="width: 100%;">
+</div>
+<h4>Askeri Koltuklar</h4>
+</a>
+</div>
+
+
+
+<div class="webde-yedi mobilde-uclu">
+<a href="urun-gruplari/kamyonkoltuklari">
+<div id="degis-tir">
+<img src="img/ikons/tir.png" style="width: 100%;">
+</div>
+<h4>Kamyon Koltukları</h4>
+</a>
+</div>
+
+
+
+<div class="webde-yedi mobilde-uclu">
+<a href="urun-gruplari/karavankoltuklari">
+<div id="degis-karavan">
+<img src="img/ikons/karavan.png" style="width: 100%;">
+</div>
+<h4>Karavan Koltukları</h4>
+</a>
+</div>
+
+<div class="webde-yedi mobilde-uclu">
+<a href="urun-gruplari/ambulanskoltuklari">
+<div id="degis-ambulans">
+<img src="img/ikons/ambulans.png" style="width: 100%;">
+</div>
+<h4>Ambulans Koltukları</h4>
+</a>
+</div>
+
+
+<div class="webde-yedi mobilde-uclu">
+<a href="urun-gruplari/gemikoltuklari">
+<div id="degis-gemi">
+<img src="img/ikons/gemi.png" style="width: 100%;">
+</div>
+<h4>Gemi Koltukları</h4>
+</a>
+</div>
+
+<div class="webde-yedi mobilde-uclu">
+<a href="urun-gruplari/trenkoltuklari">
+<div id="degis-tren">
+<img src="img/ikons/tren.png" style="width: 100%;">
+</div>
+<h4>Tren Koltukları</h4>
+</a>
+</div>
+
+
+
+
+<style type="text/css">
+.webde-yedi {
+flex: 0 0 12%;
+max-width: 12%;
+}
+</style>
+
+
+</div>
