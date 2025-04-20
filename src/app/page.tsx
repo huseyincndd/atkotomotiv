@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Link from 'next/link';
 import SketchfabSeat from '@/components/SketchfabSeat';
+import { useState, useRef } from 'react';
 
 export default function Home() {
   return (
@@ -21,7 +24,7 @@ export default function Home() {
         </div>
         
         {/* Animated Content */}
-        <div className="container mx-auto px-4 z-10 relative">
+        <div className="container mx-auto px-4 pt-20 sm:pt-16 md:pt-0 z-10 relative">
           <div className="max-w-4xl">
             <div className="animate-fade-in-up opacity-0" style={{ animationDelay: "0.2s", animationFillMode: "forwards" }}>
               <div className="inline-block mb-4 px-6 py-2 bg-blue-500/20 backdrop-blur-md rounded-full border border-blue-400/30">
@@ -249,13 +252,13 @@ export default function Home() {
               <div className="space-y-6">
                 <div className="flex items-start">
                   <div className="flex-shrink-0 mt-1">
-                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600">
+                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 relative z-10">
                       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                       </svg>
                     </div>
                   </div>
-                  <div className="ml-4">
+                  <div className="ml-4 relative z-20">
                     <h3 className="text-xl font-semibold text-gray-900">Gelişmiş Güvenlik Standartları</h3>
                     <p className="text-gray-600 mt-2">ISO ve TSE onaylı ürünlerimiz uluslararası güvenlik standartlarının üzerinde test edilmektedir.</p>
                   </div>
@@ -263,13 +266,13 @@ export default function Home() {
                 
                 <div className="flex items-start">
                   <div className="flex-shrink-0 mt-1">
-                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600">
+                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 relative z-10">
                       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                       </svg>
                     </div>
                   </div>
-                  <div className="ml-4">
+                  <div className="ml-4 relative z-20">
                     <h3 className="text-xl font-semibold text-gray-900">Yenilikçi Malzemeler</h3>
                     <p className="text-gray-600 mt-2">Hafif, dayanıklı ve sürdürülebilir malzemelerle tasarladığımız koltuklar uzun ömürlü kullanım sağlar.</p>
                   </div>
@@ -277,13 +280,13 @@ export default function Home() {
                 
                 <div className="flex items-start">
                   <div className="flex-shrink-0 mt-1">
-                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600">
+                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 relative z-10">
                       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11" />
                       </svg>
                     </div>
                   </div>
-                  <div className="ml-4">
+                  <div className="ml-4 relative z-20">
                     <h3 className="text-xl font-semibold text-gray-900">Kişiselleştirilebilir Tasarım</h3>
                     <p className="text-gray-600 mt-2">Her müşterinin ihtiyacına özel çözümler sunan modüler koltuk sistemleri geliştiriyoruz.</p>
                   </div>
@@ -319,7 +322,24 @@ export default function Home() {
             {/* Right Shadow Gradient */}
             <div className="absolute right-0 top-0 bottom-0 w-16 z-10 bg-gradient-to-l from-gray-50 to-transparent pointer-events-none"></div>
             
-            <div className="flex space-x-6 overflow-x-auto pb-8 px-4 scrollbar-hide">
+            {/* Scroll Indicator for Mobile - Only visible on smaller screens */}
+            <button 
+              onClick={() => {
+                const container = document.querySelector('.product-scroll-container');
+                if (container) {
+                  const scrollAmount = 320; // Width of one card + gap
+                  container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                }
+              }}
+              className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-blue-500/70 hover:bg-blue-600/70 text-white p-3 rounded-full shadow-lg z-20 animate-pulse md:hidden focus:outline-none active:scale-95 transition-transform duration-150"
+              aria-label="Daha fazla ürün göster"
+            >
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+            
+            <div className="flex space-x-6 overflow-x-auto pb-8 px-4 scrollbar-hide product-scroll-container">
               {/* Product Card 1 */}
               <div className="flex-shrink-0 w-80 group">
                 <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col">
